@@ -32,12 +32,9 @@ jobs:
 
       - name: dbt deps
         run: dbt deps
-        working-directory: InsightaAssessment
 
       - name: dbt run
         run: dbt run --profiles-dir .
-        working-directory: InsightaAssessment
 
       - name: dbt test
         run: dbt test --profiles-dir .
-        working-directory: InsightaAssessment
