@@ -686,3 +686,49 @@ select * from metrics
 [0m23:00:42.084489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881CB141D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7C9490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7CA0F0>]}
 [0m23:00:42.084930 [debug] [MainThread]: Flushing usage events
 [0m23:00:42.775836 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:59:14.272010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500AE1CD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500B8A5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500BF1BD90>]}
+
+
+============================== 23:59:14.281056 | def57d62-ae6a-46ed-8ed4-216e5f5b6cef ==============================
+[0m23:59:14.281056 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m23:59:14.282080 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'no_print': 'None', 'write_json': 'True', 'use_colors': 'True', 'log_format': 'default', 'warn_error': 'None', 'log_path': 'D:\\InsightaAssessment\\logs', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'invocation_command': 'dbt run', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m23:59:20.120810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500B29D810>]}
+[0m23:59:20.198385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015028C87460>]}
+[0m23:59:20.200419 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m23:59:20.707836 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m23:59:20.817729 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m23:59:20.818396 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m23:59:20.818993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015028D29450>]}
+[0m23:59:22.330774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015029159E50>]}
+[0m23:59:22.397963 [debug] [MainThread]: Wrote artifact WritableManifest to D:\InsightaAssessment\target\manifest.json
+[0m23:59:22.400930 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\InsightaAssessment\target\semantic_manifest.json
+[0m23:59:22.436865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015029598590>]}
+[0m23:59:22.437528 [info ] [MainThread]: Found 7 models, 4 sources, 510 macros
+[0m23:59:22.438099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'def57d62-ae6a-46ed-8ed4-216e5f5b6cef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001502917E5B0>]}
+[0m23:59:22.443542 [info ] [MainThread]: 
+[0m23:59:22.444525 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m23:59:22.445113 [info ] [MainThread]: 
+[0m23:59:22.445774 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m23:59:22.451967 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_insighta-assessment'
+[0m23:59:22.453697 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:59:34.456589 [debug] [ThreadPool]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m23:59:34.460192 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:59:46.293055 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m23:59:46.293482 [info ] [MainThread]: 
+[0m23:59:46.293945 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 23.85 seconds (23.85s).
+[0m23:59:46.294539 [error] [MainThread]: Encountered an error:
+Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[0m23:59:46.295403 [debug] [MainThread]: Command `dbt run` failed at 23:59:46.295282 after 32.28 seconds
+[0m23:59:46.295774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500BD0AA50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150294BFEE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015029568050>]}
+[0m23:59:46.296201 [debug] [MainThread]: Flushing usage events
+[0m23:59:46.867521 [debug] [MainThread]: An error was encountered while trying to flush usage events
