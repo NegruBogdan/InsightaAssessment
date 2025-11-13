@@ -24,7 +24,7 @@ jobs:
 
       - name: Install dbt
         run: |
-          pip install dbt-bigquery==1.11.0
+          pip install dbt-bigquery==1.10.3
 
       - name: Authenticate GCP
         run: |
