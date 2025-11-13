@@ -1,0 +1,11 @@
+InsightaAssessment:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "{{ env_var('BIGQUERY_PROJECT') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
+      keyfile: key.json
+      threads: 4
+      location: US
