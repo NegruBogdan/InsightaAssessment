@@ -1,0 +1,41 @@
+name: dbt run
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  dbt_run:
+    runs-on: ubuntu-latest
+    env:
+      BIGQUERY_PROJECT: ${{ secrets.GCP_PROJECT }}
+      BIGQUERY_DATASET: ${{ secrets.BQ_DATASET }}
+      GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+
+      - name: Install dbt
+        run: |
+          pip install dbt-bigquery==1.11.0
+
+      - name: Authenticate GCP
+        run: |
+          echo "${GOOGLE_APPLICATION_CREDENTIALS}" > key.json
+          gcloud auth activate-service-account --key-file=key.json
+
+      - name: dbt deps
+        run: dbt deps
+
+      - name: dbt run
+        run: dbt run --profiles-dir .
+
+      - name: dbt test
+        run: dbt test --profiles-dir .
