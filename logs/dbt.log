@@ -1,44 +1,688 @@
-[0m13:36:16.814045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D40F948D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4103D5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D410A4BD90>]}
+[0m13:38:23.235826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023526D58D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235277C9A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023527E5BD90>]}
 
 
-============================== 13:36:16.818120 | 6c64b46b-9ff9-4f00-9e89-8f768f14a518 ==============================
-[0m13:36:16.818120 [info ] [MainThread]: Running with dbt=1.11.0-b4
-[0m13:36:16.818761 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'invocation_command': 'dbt init', 'no_print': 'None', 'printer_width': '80', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None'}
-[0m13:36:31.035813 [debug] [MainThread]: Starter project path: D:\Utile\Python\Lib\site-packages\dbt\include\starter_project
-[0m13:36:31.049696 [info ] [MainThread]: 
-Your new dbt project "insights_assessment_dbt" was created!
+============================== 13:38:23.241097 | 1d686f5d-066f-4779-8316-b0a08dbed6b3 ==============================
+[0m13:38:23.241097 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m13:38:23.242076 [debug] [MainThread]: running dbt with arguments {'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'log_format': 'default', 'write_json': 'True', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'D:\\InsightaAssessment\\insights_assessment_dbt\\logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'use_colors': 'True', 'printer_width': '80', 'target_path': 'None'}
+[0m13:38:23.264629 [info ] [MainThread]: dbt version: 1.11.0-b4
+[0m13:38:23.265246 [info ] [MainThread]: python version: 3.13.3
+[0m13:38:23.265686 [info ] [MainThread]: python path: D:\Utile\Python\python.exe
+[0m13:38:23.266253 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m13:38:27.809708 [info ] [MainThread]: Using profiles dir at C:\Users\Bogdan\.dbt
+[0m13:38:27.810378 [info ] [MainThread]: Using profiles.yml file at C:\Users\Bogdan\.dbt\profiles.yml
+[0m13:38:27.810867 [info ] [MainThread]: Using dbt_project.yml file at D:\InsightaAssessment\insights_assessment_dbt\dbt_project.yml
+[0m13:38:27.811203 [info ] [MainThread]: adapter type: bigquery
+[0m13:38:27.811553 [info ] [MainThread]: adapter version: 1.10.3
+[0m13:38:27.919119 [info ] [MainThread]: Configuration:
+[0m13:38:27.919714 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:38:27.920064 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:38:27.920446 [info ] [MainThread]: Required dependencies:
+[0m13:38:27.920825 [debug] [MainThread]: Executing "git --help"
+[0m13:38:27.971060 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:38:27.971594 [debug] [MainThread]: STDERR: "b''"
+[0m13:38:27.971981 [info ] [MainThread]:  - git [[32mOK found[0m]
 
-For more information on how to configure the profiles.yml file,
-please consult the dbt documentation here:
+[0m13:38:27.972473 [info ] [MainThread]: Connection:
+[0m13:38:27.972860 [info ] [MainThread]:   method: service-account
+[0m13:38:27.973370 [info ] [MainThread]:   database: insighta-assessment
+[0m13:38:27.973797 [info ] [MainThread]:   execution_project: insighta-assessment
+[0m13:38:27.974210 [info ] [MainThread]:   schema: stack_overflow_dataset
+[0m13:38:27.974613 [info ] [MainThread]:   location: US
+[0m13:38:27.975047 [info ] [MainThread]:   priority: interactive
+[0m13:38:27.975414 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:38:27.975828 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:38:27.976241 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:38:27.976662 [info ] [MainThread]:   job_retries: 1
+[0m13:38:27.977082 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:38:27.977500 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:38:27.977902 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:38:27.978301 [info ] [MainThread]:   client_id: None
+[0m13:38:27.978715 [info ] [MainThread]:   token_uri: None
+[0m13:38:27.979120 [info ] [MainThread]:   compute_region: None
+[0m13:38:27.979526 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:38:27.979945 [info ] [MainThread]:   gcs_bucket: None
+[0m13:38:27.980339 [info ] [MainThread]:   dataproc_batch: None
+[0m13:38:27.981040 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m13:38:28.339677 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:38:28.340027 [debug] [MainThread]: On debug: select 1 as id
+[0m13:38:28.340264 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:38:29.706557 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:f1e78248-4013-4fef-83da-9b12b678451f&page=queryresults
+[0m13:38:34.179269 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
 
-  https://docs.getdbt.com/docs/configure-your-profile
-
-One more thing:
-
-Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
-
-  https://community.getdbt.com/
-
-Happy modeling!
-
-[0m13:36:31.050301 [info ] [MainThread]: Setting up your profile.
-[0m13:38:04.940241 [info ] [MainThread]: Profile insights_assessment_dbt written to C:\Users\Bogdan\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
-[0m13:38:04.941849 [debug] [MainThread]: Command `dbt init` succeeded at 13:38:04.941697 after 108.39 seconds
-[0m13:38:04.942232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D42D82AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D411B29C70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D42D80DBF0>]}
-[0m13:38:04.942565 [debug] [MainThread]: Flushing usage events
-[0m13:38:05.428034 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m22:49:55.249341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A37DCD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A4265A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A48DBD90>]}
+[0m13:38:34.180613 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:38:34.182297 [debug] [MainThread]: Command `dbt debug` succeeded at 13:38:34.182024 after 11.24 seconds
+[0m13:38:34.182882 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:38:34.183217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023544D82FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023544DF2210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023544C1E030>]}
+[0m13:38:34.183639 [debug] [MainThread]: Flushing usage events
+[0m13:38:34.660681 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:50:54.261236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F84BB0CD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F84C595A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F84CC0BD90>]}
 
 
-============================== 22:49:55.258948 | c327f4b7-3896-45a5-bac9-488e301aa897 ==============================
-[0m22:49:55.258948 [info ] [MainThread]: Running with dbt=1.11.0-b4
-[0m22:49:55.259817 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'use_colors': 'True', 'write_json': 'True', 'no_print': 'None', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'printer_width': '80', 'target_path': 'None'}
-[0m22:49:55.260688 [error] [MainThread]: Encountered an error:
-Runtime Error
-  No dbt_project.yml found at expected path D:\InsightaAssessment\dbt_project.yml
-  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+============================== 22:50:54.267813 | 05e24e34-23c4-46bb-b7a3-dcae83d9495a ==============================
+[0m22:50:54.267813 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m22:50:54.268540 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run', 'log_format': 'default', 'printer_width': '80', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'write_json': 'True', 'warn_error': 'None', 'log_path': 'D:\\InsightaAssessment\\insighta_assessment_dbt\\logs', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m22:51:06.671066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '05e24e34-23c4-46bb-b7a3-dcae83d9495a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F84BF71810>]}
+[0m22:51:06.745141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '05e24e34-23c4-46bb-b7a3-dcae83d9495a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F868927460>]}
+[0m22:51:06.746014 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m22:51:07.483682 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m22:51:07.485165 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:51:07.486096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '05e24e34-23c4-46bb-b7a3-dcae83d9495a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F869998950>]}
+[0m22:51:11.219266 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.insights_assessment_dbt.tag_metrics_dbt' (models\tag_metrics_dbt.sql) depends on a node named 'fact_question_answer_stats_dbt' which was not found
+[0m22:51:11.220918 [debug] [MainThread]: Command `dbt run` failed at 22:51:11.220622 after 17.09 seconds
+[0m22:51:11.221771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F869E4B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8699BEB70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F84CBABE70>]}
+[0m22:51:11.222387 [debug] [MainThread]: Flushing usage events
+[0m22:51:11.746296 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:52:31.762627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B72554CD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B725FD5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B72664BD90>]}
+
+
+============================== 22:52:31.771692 | b73cf7a5-8cda-4f77-8eaa-8b0baa945770 ==============================
+[0m22:52:31.771692 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m22:52:31.778345 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'log_format': 'default', 'write_json': 'True', 'invocation_command': 'dbt run', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'log_path': 'D:\\InsightaAssessment\\insighta_assessment_dbt\\logs', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'use_colors': 'True', 'printer_width': '80', 'target_path': 'None'}
+[0m22:52:43.370024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7259B5810>]}
+[0m22:52:43.506878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B742387460>]}
+[0m22:52:43.510078 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m22:52:44.698058 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m22:52:44.699484 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:52:44.700044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7433F8950>]}
+[0m22:52:47.773775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B74341EB70>]}
+[0m22:52:47.946914 [debug] [MainThread]: Wrote artifact WritableManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\manifest.json
+[0m22:52:47.956138 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\semantic_manifest.json
+[0m22:52:48.066462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743512CF0>]}
+[0m22:52:48.067577 [info ] [MainThread]: Found 7 models, 4 sources, 510 macros
+[0m22:52:48.068767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743918120>]}
+[0m22:52:48.075398 [info ] [MainThread]: 
+[0m22:52:48.077855 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:52:48.086135 [info ] [MainThread]: 
+[0m22:52:48.092636 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m22:52:48.109103 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_insighta-assessment'
+[0m22:52:48.109913 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:52:48.931677 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_insighta-assessment_stack_overflow_dataset'
+[0m22:52:48.933117 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:52:49.603086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743B5ED50>]}
+[0m22:52:49.604828 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:52:49.743426 [debug] [Thread-3 (]: Began running node model.insights_assessment_dbt.users_dbt
+[0m22:52:49.744289 [debug] [Thread-2 (]: Began running node model.insights_assessment_dbt.tags_dbt
+[0m22:52:49.745100 [debug] [Thread-1 (]: Began running node model.insights_assessment_dbt.answers_dbt
+[0m22:52:49.750735 [info ] [Thread-3 (]: 3 of 7 START sql table model stack_overflow_dataset.users_dbt .................. [RUN]
+[0m22:52:49.759299 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.users_dbt'
+[0m22:52:49.760628 [debug] [Thread-3 (]: Began compiling node model.insights_assessment_dbt.users_dbt
+[0m22:52:49.777693 [debug] [Thread-3 (]: Writing injected SQL for node "model.insights_assessment_dbt.users_dbt"
+[0m22:52:49.754906 [info ] [Thread-2 (]: 2 of 7 START sql table model stack_overflow_dataset.tags_dbt ................... [RUN]
+[0m22:52:49.779151 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.tags_dbt'
+[0m22:52:49.779819 [debug] [Thread-2 (]: Began compiling node model.insights_assessment_dbt.tags_dbt
+[0m22:52:49.791103 [debug] [Thread-2 (]: Writing injected SQL for node "model.insights_assessment_dbt.tags_dbt"
+[0m22:52:49.757095 [info ] [Thread-1 (]: 1 of 7 START sql table model stack_overflow_dataset.answers_dbt ................ [RUN]
+[0m22:52:49.793660 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.answers_dbt'
+[0m22:52:49.794483 [debug] [Thread-1 (]: Began compiling node model.insights_assessment_dbt.answers_dbt
+[0m22:52:49.803485 [debug] [Thread-1 (]: Writing injected SQL for node "model.insights_assessment_dbt.answers_dbt"
+[0m22:52:49.815515 [debug] [Thread-1 (]: Began executing node model.insights_assessment_dbt.answers_dbt
+[0m22:52:49.833921 [debug] [Thread-3 (]: Began executing node model.insights_assessment_dbt.users_dbt
+[0m22:52:49.868781 [debug] [Thread-2 (]: Began executing node model.insights_assessment_dbt.tags_dbt
+[0m22:52:50.177209 [debug] [Thread-1 (]: Writing runtime sql for node "model.insights_assessment_dbt.answers_dbt"
+[0m22:52:50.194727 [debug] [Thread-2 (]: Writing runtime sql for node "model.insights_assessment_dbt.tags_dbt"
+[0m22:52:50.197366 [debug] [Thread-1 (]: On model.insights_assessment_dbt.answers_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.answers_dbt"} */
+
   
-[0m22:49:55.261588 [debug] [MainThread]: Command `dbt run` failed at 22:49:55.261446 after 0.33 seconds
-[0m22:49:55.262023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A49156E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A4935910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235A476B350>]}
-[0m22:49:55.262476 [debug] [MainThread]: Flushing usage events
-[0m22:49:55.798766 [debug] [MainThread]: An error was encountered while trying to flush usage events
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`answers_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  id as answer_id,
+  parent_id as question_id,
+  owner_user_id,
+  score,
+  creation_date
+from `bigquery-public-data`.`stackoverflow`.`posts_answers`
+    );
+  
+[0m22:52:50.198248 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:52:50.282005 [debug] [Thread-3 (]: Writing runtime sql for node "model.insights_assessment_dbt.users_dbt"
+[0m22:52:50.285212 [debug] [Thread-2 (]: On model.insights_assessment_dbt.tags_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.tags_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`tags_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  row_number() over(order by tag_name) as tag_id,
+  tag_name
+from `bigquery-public-data`.`stackoverflow`.`tags`
+    );
+  
+[0m22:52:50.294980 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:52:50.351799 [debug] [Thread-3 (]: On model.insights_assessment_dbt.users_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.users_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`users_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  id as user_id,
+  reputation
+from `bigquery-public-data`.`stackoverflow`.`users`
+    );
+  
+[0m22:52:50.352470 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:52:51.742797 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:9ac1da17-b773-4f15-8134-f568d0aeb57f&page=queryresults
+[0m22:52:51.777680 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:cf3b8dbd-a38e-4aa3-8618-b872c6011fc0&page=queryresults
+[0m22:52:51.975820 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:8ca102f2-90fb-4d1f-bd7a-657529ba255c&page=queryresults
+[0m22:53:00.095093 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743BF38B0>]}
+[0m22:53:00.096858 [info ] [Thread-1 (]: 1 of 7 OK created sql table model stack_overflow_dataset.answers_dbt ........... [[32mCREATE TABLE (34.0m rows, 1.3 GiB processed)[0m in 10.30s]
+[0m22:53:00.098472 [debug] [Thread-1 (]: Finished running node model.insights_assessment_dbt.answers_dbt
+[0m22:53:00.152192 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743C81BD0>]}
+[0m22:53:00.153394 [info ] [Thread-3 (]: 3 of 7 OK created sql table model stack_overflow_dataset.users_dbt ............. [[32mCREATE TABLE (18.7m rows, 285.5 MiB processed)[0m in 10.39s]
+[0m22:53:00.156724 [debug] [Thread-3 (]: Finished running node model.insights_assessment_dbt.users_dbt
+[0m22:53:00.158333 [debug] [Thread-4 (]: Began running node model.insights_assessment_dbt.user_metrics_dbt
+[0m22:53:00.159141 [info ] [Thread-4 (]: 4 of 7 START sql table model stack_overflow_dataset.user_metrics_dbt ........... [RUN]
+[0m22:53:00.160571 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.user_metrics_dbt'
+[0m22:53:00.168271 [debug] [Thread-4 (]: Began compiling node model.insights_assessment_dbt.user_metrics_dbt
+[0m22:53:00.176683 [debug] [Thread-4 (]: Writing injected SQL for node "model.insights_assessment_dbt.user_metrics_dbt"
+[0m22:53:00.178210 [debug] [Thread-4 (]: Began executing node model.insights_assessment_dbt.user_metrics_dbt
+[0m22:53:00.198889 [debug] [Thread-4 (]: Writing runtime sql for node "model.insights_assessment_dbt.user_metrics_dbt"
+[0m22:53:00.201902 [debug] [Thread-4 (]: On model.insights_assessment_dbt.user_metrics_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.user_metrics_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`user_metrics_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  corr(u.reputation, a.score) as corr_reputation_answer_score,
+  count(distinct a.answer_id) as total_answers
+from `insighta-assessment`.`stack_overflow_dataset`.`answers_dbt` a
+join `insighta-assessment`.`stack_overflow_dataset`.`users_dbt` u
+  on a.owner_user_id = u.user_id
+    );
+  
+[0m22:53:00.202890 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:53:00.263764 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743BED450>]}
+[0m22:53:00.265030 [info ] [Thread-2 (]: 2 of 7 OK created sql table model stack_overflow_dataset.tags_dbt .............. [[32mCREATE TABLE (63.7k rows, 837.8 KiB processed)[0m in 10.48s]
+[0m22:53:00.269460 [debug] [Thread-2 (]: Finished running node model.insights_assessment_dbt.tags_dbt
+[0m22:53:00.273810 [debug] [Thread-1 (]: Began running node model.insights_assessment_dbt.questions_dbt
+[0m22:53:00.274793 [info ] [Thread-1 (]: 5 of 7 START sql table model stack_overflow_dataset.questions_dbt .............. [RUN]
+[0m22:53:00.276070 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.insights_assessment_dbt.answers_dbt, now model.insights_assessment_dbt.questions_dbt)
+[0m22:53:00.277181 [debug] [Thread-1 (]: Began compiling node model.insights_assessment_dbt.questions_dbt
+[0m22:53:00.287941 [debug] [Thread-1 (]: Writing injected SQL for node "model.insights_assessment_dbt.questions_dbt"
+[0m22:53:00.289607 [debug] [Thread-1 (]: Began executing node model.insights_assessment_dbt.questions_dbt
+[0m22:53:00.294939 [debug] [Thread-1 (]: Writing runtime sql for node "model.insights_assessment_dbt.questions_dbt"
+[0m22:53:00.297645 [debug] [Thread-1 (]: On model.insights_assessment_dbt.questions_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.questions_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`questions_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+with raw as (
+  select
+    id as question_id,
+    title,
+    accepted_answer_id,
+    comment_count,
+    view_count,
+    owner_user_id,
+    creation_date,
+    split(tags, ',') as tag_list
+  from `bigquery-public-data`.`stackoverflow`.`posts_questions`
+),
+mapped as (
+  select
+    r.question_id,
+    r.title,
+    r.accepted_answer_id,
+    r.comment_count,
+    r.view_count,
+    r.owner_user_id,
+    r.creation_date,
+    array_agg(t.tag_id order by t.tag_id) as tag_ids
+  from raw r
+  left join unnest(r.tag_list) as tag_name
+  left join `insighta-assessment`.`stack_overflow_dataset`.`tags_dbt` t
+    on trim(tag_name) = trim(t.tag_name)
+  group by 1,2,3,4,5,6,7
+)
+select * from mapped
+    );
+  
+[0m22:53:00.298879 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:53:01.622210 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:3cfd3bc3-337f-4c90-92ef-2d1e387b5309&page=queryresults
+[0m22:53:01.671724 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:b0516f1d-94ab-499f-a392-d79b76bddaa5&page=queryresults
+[0m22:53:05.644674 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:b0516f1d-94ab-499f-a392-d79b76bddaa5&page=queryresults
+[0m22:53:06.193696 [debug] [Thread-1 (]: Database Error in model questions_dbt (models\questions_dbt.sql)
+  Array cannot have a null element; error in writing field tag_ids
+  compiled code at target\run\insights_assessment_dbt\models\questions_dbt.sql
+[0m22:53:06.194759 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743B9A2E0>]}
+[0m22:53:06.195467 [error] [Thread-1 (]: 5 of 7 ERROR creating sql table model stack_overflow_dataset.questions_dbt ..... [[31mERROR[0m in 5.92s]
+[0m22:53:06.197848 [debug] [Thread-1 (]: Finished running node model.insights_assessment_dbt.questions_dbt
+[0m22:53:06.198696 [debug] [Thread-7 (]: Marking all children of 'model.insights_assessment_dbt.questions_dbt' to be skipped because of status 'error'.  Reason: Database Error in model questions_dbt (models\questions_dbt.sql)
+  Array cannot have a null element; error in writing field tag_ids
+  compiled code at target\run\insights_assessment_dbt\models\questions_dbt.sql.
+[0m22:53:06.202264 [debug] [Thread-3 (]: Began running node model.insights_assessment_dbt.question_metrics_dbt
+[0m22:53:06.208456 [info ] [Thread-3 (]: 6 of 7 SKIP relation stack_overflow_dataset.question_metrics_dbt ............... [[33mSKIP[0m]
+[0m22:53:06.209776 [debug] [Thread-3 (]: Finished running node model.insights_assessment_dbt.question_metrics_dbt
+[0m22:53:06.211723 [debug] [Thread-2 (]: Began running node model.insights_assessment_dbt.tag_metrics_dbt
+[0m22:53:06.212466 [info ] [Thread-2 (]: 7 of 7 SKIP relation stack_overflow_dataset.tag_metrics_dbt .................... [[33mSKIP[0m]
+[0m22:53:06.214683 [debug] [Thread-2 (]: Finished running node model.insights_assessment_dbt.tag_metrics_dbt
+[0m22:53:09.655899 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b73cf7a5-8cda-4f77-8eaa-8b0baa945770', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743BE6390>]}
+[0m22:53:09.656899 [info ] [Thread-4 (]: 4 of 7 OK created sql table model stack_overflow_dataset.user_metrics_dbt ...... [[32mCREATE TABLE (1.0 rows, 1.0 GiB processed)[0m in 9.50s]
+[0m22:53:09.658100 [debug] [Thread-4 (]: Finished running node model.insights_assessment_dbt.user_metrics_dbt
+[0m22:53:09.660163 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:53:09.662571 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:53:09.663065 [debug] [MainThread]: Connection 'list_insighta-assessment' was properly closed.
+[0m22:53:09.663431 [debug] [MainThread]: Connection 'list_insighta-assessment_stack_overflow_dataset' was properly closed.
+[0m22:53:09.663751 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.users_dbt' was properly closed.
+[0m22:53:09.663997 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.tags_dbt' was properly closed.
+[0m22:53:09.664193 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.questions_dbt' was properly closed.
+[0m22:53:09.664380 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.user_metrics_dbt' was properly closed.
+[0m22:53:09.664705 [info ] [MainThread]: 
+[0m22:53:09.665286 [info ] [MainThread]: Finished running 7 table models in 0 hours 0 minutes and 21.57 seconds (21.57s).
+[0m22:53:09.667193 [debug] [MainThread]: Command end result
+[0m22:53:09.748372 [debug] [MainThread]: Wrote artifact WritableManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\manifest.json
+[0m22:53:09.762196 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\semantic_manifest.json
+[0m22:53:09.773211 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\InsightaAssessment\insighta_assessment_dbt\target\run_results.json
+[0m22:53:09.774861 [info ] [MainThread]: 
+[0m22:53:09.776952 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m22:53:09.778339 [info ] [MainThread]: 
+[0m22:53:09.779034 [error] [MainThread]: [31mFailure in model questions_dbt (models\questions_dbt.sql)[0m
+[0m22:53:09.779584 [error] [MainThread]:   Database Error in model questions_dbt (models\questions_dbt.sql)
+  Array cannot have a null element; error in writing field tag_ids
+  compiled code at target\run\insights_assessment_dbt\models\questions_dbt.sql
+[0m22:53:09.780001 [info ] [MainThread]: 
+[0m22:53:09.780909 [info ] [MainThread]:   compiled code at target\compiled\insights_assessment_dbt\models\questions_dbt.sql
+[0m22:53:09.781633 [info ] [MainThread]: 
+[0m22:53:09.790697 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=1 SKIP=2 NO-OP=0 TOTAL=7
+[0m22:53:09.792656 [debug] [MainThread]: Command `dbt run` failed at 22:53:09.792375 after 38.43 seconds
+[0m22:53:09.793444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B74424BAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B743592C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B7443FBE90>]}
+[0m22:53:09.794089 [debug] [MainThread]: Flushing usage events
+[0m22:53:10.469549 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:59:49.738922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002887E9BCD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002887F445A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002887FABBD90>]}
+
+
+============================== 22:59:49.746154 | 806321df-9d5f-4aaf-bd60-468c004c9097 ==============================
+[0m22:59:49.746154 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m22:59:49.747066 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'log_format': 'default', 'use_colors': 'True', 'target_path': 'None', 'printer_width': '80', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'log_path': 'D:\\InsightaAssessment\\insighta_assessment_dbt\\logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Bogdan\\.dbt', 'invocation_command': 'dbt run', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m23:00:03.327216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002887EE21810>]}
+[0m23:00:03.501866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881B95B460>]}
+[0m23:00:03.502955 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m23:00:04.869096 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m23:00:05.235184 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m23:00:05.236259 [debug] [MainThread]: Partial parsing: updated file: insights_assessment_dbt://models\questions_dbt.sql
+[0m23:00:06.130558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881CF48850>]}
+[0m23:00:06.350297 [debug] [MainThread]: Wrote artifact WritableManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\manifest.json
+[0m23:00:06.358894 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\semantic_manifest.json
+[0m23:00:06.464915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002887F946A80>]}
+[0m23:00:06.467469 [info ] [MainThread]: Found 7 models, 4 sources, 510 macros
+[0m23:00:06.469191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D0D1E10>]}
+[0m23:00:06.473315 [info ] [MainThread]: 
+[0m23:00:06.479431 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m23:00:06.482624 [info ] [MainThread]: 
+[0m23:00:06.484994 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m23:00:06.506539 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_insighta-assessment'
+[0m23:00:06.507563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:00:07.219921 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_insighta-assessment_stack_overflow_dataset'
+[0m23:00:07.221326 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:00:07.897750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881CAC7110>]}
+[0m23:00:07.898902 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:00:07.912300 [debug] [Thread-2 (]: Began running node model.insights_assessment_dbt.tags_dbt
+[0m23:00:07.913266 [debug] [Thread-1 (]: Began running node model.insights_assessment_dbt.answers_dbt
+[0m23:00:07.914317 [debug] [Thread-3 (]: Began running node model.insights_assessment_dbt.users_dbt
+[0m23:00:07.915307 [info ] [Thread-2 (]: 2 of 7 START sql table model stack_overflow_dataset.tags_dbt ................... [RUN]
+[0m23:00:07.920266 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.tags_dbt'
+[0m23:00:07.922467 [debug] [Thread-2 (]: Began compiling node model.insights_assessment_dbt.tags_dbt
+[0m23:00:07.916175 [info ] [Thread-1 (]: 1 of 7 START sql table model stack_overflow_dataset.answers_dbt ................ [RUN]
+[0m23:00:07.930049 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.answers_dbt'
+[0m23:00:07.931107 [debug] [Thread-1 (]: Began compiling node model.insights_assessment_dbt.answers_dbt
+[0m23:00:07.918317 [info ] [Thread-3 (]: 3 of 7 START sql table model stack_overflow_dataset.users_dbt .................. [RUN]
+[0m23:00:07.936522 [debug] [Thread-1 (]: Writing injected SQL for node "model.insights_assessment_dbt.answers_dbt"
+[0m23:00:07.950507 [debug] [Thread-1 (]: Began executing node model.insights_assessment_dbt.answers_dbt
+[0m23:00:07.947976 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.users_dbt'
+[0m23:00:07.941749 [debug] [Thread-2 (]: Writing injected SQL for node "model.insights_assessment_dbt.tags_dbt"
+[0m23:00:07.977048 [debug] [Thread-3 (]: Began compiling node model.insights_assessment_dbt.users_dbt
+[0m23:00:07.977525 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m23:00:07.985347 [debug] [Thread-3 (]: Writing injected SQL for node "model.insights_assessment_dbt.users_dbt"
+[0m23:00:07.986784 [debug] [Thread-2 (]: Began executing node model.insights_assessment_dbt.tags_dbt
+[0m23:00:08.028558 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m23:00:08.034606 [debug] [Thread-3 (]: Began executing node model.insights_assessment_dbt.users_dbt
+[0m23:00:08.041792 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m23:00:08.743157 [debug] [Thread-2 (]: Writing runtime sql for node "model.insights_assessment_dbt.tags_dbt"
+[0m23:00:08.745096 [debug] [Thread-2 (]: On model.insights_assessment_dbt.tags_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.tags_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`tags_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  row_number() over(order by tag_name) as tag_id,
+  tag_name
+from `bigquery-public-data`.`stackoverflow`.`tags`
+    );
+  
+[0m23:00:08.795107 [debug] [Thread-3 (]: Writing runtime sql for node "model.insights_assessment_dbt.users_dbt"
+[0m23:00:08.797551 [debug] [Thread-1 (]: Writing runtime sql for node "model.insights_assessment_dbt.answers_dbt"
+[0m23:00:08.799419 [debug] [Thread-1 (]: On model.insights_assessment_dbt.answers_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.answers_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`answers_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  id as answer_id,
+  parent_id as question_id,
+  owner_user_id,
+  score,
+  creation_date
+from `bigquery-public-data`.`stackoverflow`.`posts_answers`
+    );
+  
+[0m23:00:08.803898 [debug] [Thread-3 (]: On model.insights_assessment_dbt.users_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.users_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`users_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  id as user_id,
+  reputation
+from `bigquery-public-data`.`stackoverflow`.`users`
+    );
+  
+[0m23:00:09.365480 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:9665a870-c2a1-4d5f-aaac-39a0c725163f&page=queryresults
+[0m23:00:09.368561 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:95bdfe47-5b7c-41fe-a45e-27a428c7c4ce&page=queryresults
+[0m23:00:09.384266 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:05e2bc89-8656-41af-b4ca-9bcc73c4d2e4&page=queryresults
+[0m23:00:12.583765 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D073110>]}
+[0m23:00:12.586671 [info ] [Thread-2 (]: 2 of 7 OK created sql table model stack_overflow_dataset.tags_dbt .............. [[32mCREATE TABLE (63.7k rows, 837.8 KiB processed)[0m in 4.66s]
+[0m23:00:12.588081 [debug] [Thread-2 (]: Finished running node model.insights_assessment_dbt.tags_dbt
+[0m23:00:12.589216 [debug] [Thread-4 (]: Began running node model.insights_assessment_dbt.questions_dbt
+[0m23:00:12.590127 [info ] [Thread-4 (]: 4 of 7 START sql table model stack_overflow_dataset.questions_dbt .............. [RUN]
+[0m23:00:12.591438 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.insights_assessment_dbt.questions_dbt'
+[0m23:00:12.592174 [debug] [Thread-4 (]: Began compiling node model.insights_assessment_dbt.questions_dbt
+[0m23:00:12.602976 [debug] [Thread-4 (]: Writing injected SQL for node "model.insights_assessment_dbt.questions_dbt"
+[0m23:00:12.606217 [debug] [Thread-4 (]: Began executing node model.insights_assessment_dbt.questions_dbt
+[0m23:00:12.621068 [debug] [Thread-4 (]: Writing runtime sql for node "model.insights_assessment_dbt.questions_dbt"
+[0m23:00:12.623390 [debug] [Thread-4 (]: On model.insights_assessment_dbt.questions_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.questions_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`questions_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+with raw as (
+  select
+    id as question_id,
+    title,
+    accepted_answer_id,
+    comment_count,
+    view_count,
+    owner_user_id,
+    creation_date,
+    split(tags, ',') as tag_list
+  from `bigquery-public-data`.`stackoverflow`.`posts_questions`
+),
+mapped as (
+  select
+    r.question_id,
+    r.title,
+    r.accepted_answer_id,
+    r.comment_count,
+    r.view_count,
+    r.owner_user_id,
+    r.creation_date,
+    array_agg(t.tag_id order by t.tag_id) as tag_ids
+  from raw r
+  left join unnest(r.tag_list) as tag_name
+  left join `insighta-assessment`.`stack_overflow_dataset`.`tags_dbt` t
+    on trim(tag_name) = trim(t.tag_name)
+  where t.tag_id is not null  
+  group by 1,2,3,4,5,6,7
+)
+select * from mapped
+    );
+  
+[0m23:00:12.624271 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m23:00:12.978696 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D112AF0>]}
+[0m23:00:12.980295 [info ] [Thread-3 (]: 3 of 7 OK created sql table model stack_overflow_dataset.users_dbt ............. [[32mCREATE TABLE (18.7m rows, 285.5 MiB processed)[0m in 5.03s]
+[0m23:00:12.985408 [debug] [Thread-3 (]: Finished running node model.insights_assessment_dbt.users_dbt
+[0m23:00:13.657175 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:110d8a94-1c71-4ba5-ad26-38c6eef683eb&page=queryresults
+[0m23:00:13.769666 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D181450>]}
+[0m23:00:13.770699 [info ] [Thread-1 (]: 1 of 7 OK created sql table model stack_overflow_dataset.answers_dbt ........... [[32mCREATE TABLE (34.0m rows, 1.3 GiB processed)[0m in 5.84s]
+[0m23:00:13.772567 [debug] [Thread-1 (]: Finished running node model.insights_assessment_dbt.answers_dbt
+[0m23:00:13.773905 [debug] [Thread-2 (]: Began running node model.insights_assessment_dbt.user_metrics_dbt
+[0m23:00:13.774786 [info ] [Thread-2 (]: 5 of 7 START sql table model stack_overflow_dataset.user_metrics_dbt ........... [RUN]
+[0m23:00:13.775697 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.insights_assessment_dbt.tags_dbt, now model.insights_assessment_dbt.user_metrics_dbt)
+[0m23:00:13.776491 [debug] [Thread-2 (]: Began compiling node model.insights_assessment_dbt.user_metrics_dbt
+[0m23:00:13.782855 [debug] [Thread-2 (]: Writing injected SQL for node "model.insights_assessment_dbt.user_metrics_dbt"
+[0m23:00:13.785523 [debug] [Thread-2 (]: Began executing node model.insights_assessment_dbt.user_metrics_dbt
+[0m23:00:13.789667 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m23:00:14.406399 [debug] [Thread-2 (]: Writing runtime sql for node "model.insights_assessment_dbt.user_metrics_dbt"
+[0m23:00:14.407796 [debug] [Thread-2 (]: On model.insights_assessment_dbt.user_metrics_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.user_metrics_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`user_metrics_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+  corr(u.reputation, a.score) as corr_reputation_answer_score,
+  count(distinct a.answer_id) as total_answers
+from `insighta-assessment`.`stack_overflow_dataset`.`answers_dbt` a
+join `insighta-assessment`.`stack_overflow_dataset`.`users_dbt` u
+  on a.owner_user_id = u.user_id
+    );
+  
+[0m23:00:15.567897 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:02a871a8-9e7e-4afc-8d5f-5ed8c7e9a387&page=queryresults
+[0m23:00:21.031981 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D1FC0D0>]}
+[0m23:00:21.032672 [info ] [Thread-4 (]: 4 of 7 OK created sql table model stack_overflow_dataset.questions_dbt ......... [[32mCREATE TABLE (2.7m rows, 2.7 GiB processed)[0m in 8.44s]
+[0m23:00:21.033738 [debug] [Thread-4 (]: Finished running node model.insights_assessment_dbt.questions_dbt
+[0m23:00:21.035381 [debug] [Thread-3 (]: Began running node model.insights_assessment_dbt.question_metrics_dbt
+[0m23:00:21.036654 [info ] [Thread-3 (]: 6 of 7 START sql table model stack_overflow_dataset.question_metrics_dbt ....... [RUN]
+[0m23:00:21.037796 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.insights_assessment_dbt.users_dbt, now model.insights_assessment_dbt.question_metrics_dbt)
+[0m23:00:21.038416 [debug] [Thread-3 (]: Began compiling node model.insights_assessment_dbt.question_metrics_dbt
+[0m23:00:21.043113 [debug] [Thread-3 (]: Writing injected SQL for node "model.insights_assessment_dbt.question_metrics_dbt"
+[0m23:00:21.045222 [debug] [Thread-3 (]: Began executing node model.insights_assessment_dbt.question_metrics_dbt
+[0m23:00:21.050743 [debug] [Thread-3 (]: Writing runtime sql for node "model.insights_assessment_dbt.question_metrics_dbt"
+[0m23:00:21.053192 [debug] [Thread-3 (]: On model.insights_assessment_dbt.question_metrics_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.question_metrics_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`question_metrics_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+with questions as (
+  select * from `insighta-assessment`.`stack_overflow_dataset`.`questions_dbt`
+),
+answers as (
+  select * from `insighta-assessment`.`stack_overflow_dataset`.`answers_dbt`
+)
+select
+  q.question_id,
+  q.title,
+  q.creation_date as question_date,
+  q.view_count,
+  q.comment_count,
+  q.owner_user_id,
+  count(a.answer_id) as total_answers,
+  sum(case when a.answer_id = q.accepted_answer_id then 1 else 0 end) as accepted_answers,
+  case when count(a.answer_id) = 0 then 1 else 0 end as is_unanswered
+from questions q
+left join answers a
+  on q.question_id = a.question_id
+group by 1,2,3,4,5,6
+    );
+  
+[0m23:00:21.054200 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m23:00:21.942498 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:3b7506d2-12b2-45c9-8aa1-d386cc0ad38e&page=queryresults
+[0m23:00:22.082012 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D1657F0>]}
+[0m23:00:22.083736 [info ] [Thread-2 (]: 5 of 7 OK created sql table model stack_overflow_dataset.user_metrics_dbt ...... [[32mCREATE TABLE (1.0 rows, 1.0 GiB processed)[0m in 8.31s]
+[0m23:00:22.084801 [debug] [Thread-2 (]: Finished running node model.insights_assessment_dbt.user_metrics_dbt
+[0m23:00:32.891506 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7C8B90>]}
+[0m23:00:32.892412 [info ] [Thread-3 (]: 6 of 7 OK created sql table model stack_overflow_dataset.question_metrics_dbt .. [[32mCREATE TABLE (2.7m rows, 776.0 MiB processed)[0m in 11.85s]
+[0m23:00:32.893506 [debug] [Thread-3 (]: Finished running node model.insights_assessment_dbt.question_metrics_dbt
+[0m23:00:32.894354 [debug] [Thread-1 (]: Began running node model.insights_assessment_dbt.tag_metrics_dbt
+[0m23:00:32.894954 [info ] [Thread-1 (]: 7 of 7 START sql table model stack_overflow_dataset.tag_metrics_dbt ............ [RUN]
+[0m23:00:32.896082 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.insights_assessment_dbt.answers_dbt, now model.insights_assessment_dbt.tag_metrics_dbt)
+[0m23:00:32.897519 [debug] [Thread-1 (]: Began compiling node model.insights_assessment_dbt.tag_metrics_dbt
+[0m23:00:32.905483 [debug] [Thread-1 (]: Writing injected SQL for node "model.insights_assessment_dbt.tag_metrics_dbt"
+[0m23:00:32.907733 [debug] [Thread-1 (]: Began executing node model.insights_assessment_dbt.tag_metrics_dbt
+[0m23:00:32.925078 [debug] [Thread-1 (]: Writing runtime sql for node "model.insights_assessment_dbt.tag_metrics_dbt"
+[0m23:00:32.926832 [debug] [Thread-1 (]: On model.insights_assessment_dbt.tag_metrics_dbt: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "insights_assessment_dbt", "target_name": "dev", "node_id": "model.insights_assessment_dbt.tag_metrics_dbt"} */
+
+  
+    
+
+    create or replace table `insighta-assessment`.`stack_overflow_dataset`.`tag_metrics_dbt`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+with question_tags as (
+  select
+    q.question_id,
+    tag_id
+  from `insighta-assessment`.`stack_overflow_dataset`.`questions_dbt` q,
+  unnest(q.tag_ids) as tag_id
+),
+metrics as (
+  select
+    t.tag_id,
+    t.tag_name,
+    count(distinct qt.question_id) as total_questions,
+    sum(case when fqas.is_unanswered = 0 then 1 else 0 end) as answered_questions,
+    sum(case when fqas.is_unanswered = 1 then 1 else 0 end) as unanswered_questions,
+    safe_divide(sum(case when fqas.is_unanswered = 1 then 1 else 0 end), count(distinct qt.question_id)) as unanswered_ratio
+  from question_tags qt
+  join `insighta-assessment`.`stack_overflow_dataset`.`question_metrics_dbt` fqas
+    on qt.question_id = fqas.question_id
+  join `insighta-assessment`.`stack_overflow_dataset`.`tags_dbt` t
+    on qt.tag_id = t.tag_id
+  group by 1,2
+)
+select * from metrics
+    );
+  
+[0m23:00:32.936690 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:00:33.872005 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=insighta-assessment&j=bq:US:63ef6780-ae62-4ab9-abff-7eb20d246304&page=queryresults
+[0m23:00:41.996611 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '806321df-9d5f-4aaf-bd60-468c004c9097', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7CA270>]}
+[0m23:00:41.997392 [info ] [Thread-1 (]: 7 of 7 OK created sql table model stack_overflow_dataset.tag_metrics_dbt ....... [[32mCREATE TABLE (26.8k rows, 84.6 MiB processed)[0m in 9.10s]
+[0m23:00:41.998444 [debug] [Thread-1 (]: Finished running node model.insights_assessment_dbt.tag_metrics_dbt
+[0m23:00:42.002310 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m23:00:42.004851 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:00:42.005461 [debug] [MainThread]: Connection 'list_insighta-assessment' was properly closed.
+[0m23:00:42.005882 [debug] [MainThread]: Connection 'list_insighta-assessment_stack_overflow_dataset' was properly closed.
+[0m23:00:42.006309 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.user_metrics_dbt' was properly closed.
+[0m23:00:42.006947 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.tag_metrics_dbt' was properly closed.
+[0m23:00:42.007328 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.question_metrics_dbt' was properly closed.
+[0m23:00:42.007638 [debug] [MainThread]: Connection 'model.insights_assessment_dbt.questions_dbt' was properly closed.
+[0m23:00:42.008261 [info ] [MainThread]: 
+[0m23:00:42.009368 [info ] [MainThread]: Finished running 7 table models in 0 hours 0 minutes and 35.52 seconds (35.52s).
+[0m23:00:42.015655 [debug] [MainThread]: Command end result
+[0m23:00:42.055718 [debug] [MainThread]: Wrote artifact WritableManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\manifest.json
+[0m23:00:42.058810 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\InsightaAssessment\insighta_assessment_dbt\target\semantic_manifest.json
+[0m23:00:42.077381 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\InsightaAssessment\insighta_assessment_dbt\target\run_results.json
+[0m23:00:42.078001 [info ] [MainThread]: 
+[0m23:00:42.079405 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:00:42.082416 [info ] [MainThread]: 
+[0m23:00:42.083083 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m23:00:42.084088 [debug] [MainThread]: Command `dbt run` succeeded at 23:00:42.083928 after 52.70 seconds
+[0m23:00:42.084489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881CB141D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7C9490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002881D7CA0F0>]}
+[0m23:00:42.084930 [debug] [MainThread]: Flushing usage events
+[0m23:00:42.775836 [debug] [MainThread]: An error was encountered while trying to flush usage events
