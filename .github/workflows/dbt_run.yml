@@ -23,8 +23,7 @@ jobs:
           python-version: 3.13
 
       - name: Install dbt
-        run: |
-          pip install dbt-bigquery==1.10.3
+        run: pip install dbt-bigquery==1.10.3
 
       - name: Authenticate GCP
         run: |
@@ -33,9 +32,12 @@ jobs:
 
       - name: dbt deps
         run: dbt deps
+        working-directory: InsightaAssessment_dbt
 
       - name: dbt run
         run: dbt run --profiles-dir .
+        working-directory: InsightaAssessment_dbt
 
       - name: dbt test
         run: dbt test --profiles-dir .
+        working-directory: InsightaAssessment_dbt
