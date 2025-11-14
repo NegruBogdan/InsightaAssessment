@@ -4,7 +4,7 @@ with exploded_tags as (
     select
         q.question_id,
         tag_id
-    from {{ ref('questions_dbt') }} q,
+    from {{ ref('questions') }} q,
     unnest(q.tag_ids) tag_id
 ),
 answer_scores as (
@@ -15,16 +15,16 @@ answer_scores as (
         a.score,
         a.creation_date,
         case when a.answer_id = q.accepted_answer_id then 1 else 0 end as is_accepted
-    from {{ ref('answers_dbt') }} a
-    left join {{ ref('questions_dbt') }} q 
+    from {{ ref('answers') }} a
+    left join {{ ref('questions') }} q 
         on a.parent_id = q.question_id
 ),
 accepted_answer_times as (
     select
         q.question_id,
         timestamp_diff(a.creation_date, q.creation_date, HOUR) as hours_to_accept
-    from {{ ref('questions_dbt') }} q
-    join {{ ref('answers_dbt') }} a
+    from {{ ref('questions') }} q
+    join {{ ref('answers') }} a
         on a.answer_id = q.accepted_answer_id
 ),
 tag_users as (
@@ -33,8 +33,8 @@ tag_users as (
         q.owner_user_id as question_user_id,
         a.owner_user_id as answer_user_id
     from exploded_tags et
-    left join {{ ref('questions_dbt') }} q on q.question_id = et.question_id
-    left join {{ ref('answers_dbt') }} a on a.parent_id = et.question_id
+    left join {{ ref('questions') }} q on q.question_id = et.question_id
+    left join {{ ref('answers') }} a on a.parent_id = et.question_id
 ),
 aggregated_users as (
     select
@@ -58,7 +58,7 @@ tag_views as (
         sum(q.view_count) as total_views,
         count(distinct et.question_id) as total_questions
     from exploded_tags et
-    left join {{ ref('questions_dbt') }} q on q.question_id = et.question_id
+    left join {{ ref('questions') }} q on q.question_id = et.question_id
     group by et.tag_id
 ),
 top_user_contributions as (
@@ -94,8 +94,8 @@ select
     safe_divide(cardinality(array_except(au.askers, au.answerers)), cardinality(array_union(au.askers, au.answerers))) as ratio_only_asking,
     safe_divide(tac.total_answers, tv.total_views) as answer_to_view_ratio
 from exploded_tags et
-left join {{ ref('tags_dbt') }} tg on tg.tag_id = et.tag_id
-left join {{ ref('questions_dbt') }} q on q.question_id = et.question_id
+left join {{ ref('tags') }} tg on tg.tag_id = et.tag_id
+left join {{ ref('questions') }} q on q.question_id = et.question_id
 left join answer_scores a on a.question_id = et.question_id
 left join accepted_answer_times att on att.question_id = et.question_id
 left join aggregated_users au on au.tag_id = et.tag_id
