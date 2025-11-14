@@ -9,7 +9,7 @@ with exploded_tags as (
 ),
 answer_scores as (
     select
-        a.parent_id as question_id,
+        a.question_id,
         a.answer_id,
         a.owner_user_id,
         a.score,
@@ -17,7 +17,7 @@ answer_scores as (
         case when a.answer_id = q.accepted_answer_id then 1 else 0 end as is_accepted
     from {{ ref('answers') }} a
     left join {{ ref('questions') }} q 
-        on a.parent_id = q.question_id
+        on a.question_id = q.question_id
 ),
 accepted_answer_times as (
     select
@@ -34,7 +34,7 @@ tag_users as (
         a.owner_user_id as answer_user_id
     from exploded_tags et
     left join {{ ref('questions') }} q on q.question_id = et.question_id
-    left join {{ ref('answers') }} a on a.parent_id = et.question_id
+    left join {{ ref('answers') }} a on a.question_id = et.question_id
 ),
 aggregated_users as (
     select
