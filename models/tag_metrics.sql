@@ -101,4 +101,4 @@ left join accepted_answer_times att on att.question_id = et.question_id
 left join aggregated_users au on au.tag_id = et.tag_id
 left join tag_answer_counts tac on tac.tag_id = et.tag_id
 left join tag_views tv on tv.tag_id = et.tag_id
-group by 1,2, tv.total_questions, tac.total_answers, tv.total_views;
+group by 1,2, tv.total_questions, tac.total_answers, tv.total_views
