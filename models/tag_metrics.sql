@@ -80,7 +80,7 @@ top_percent_contrib as (
 )
 
 select
-    t.tag_id,
+    et.tag_id,
     tg.tag_name,
     tv.total_questions,
     count(distinct case when q.accepted_answer_id is not null then et.question_id end) as answered_questions,
