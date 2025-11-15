@@ -36,14 +36,6 @@ tag_users as (
     left join {{ ref('questions') }} q on q.question_id = et.question_id
     left join {{ ref('answers') }} a on a.question_id = et.question_id
 ),
-aggregated_users as (
-    select
-        tag_id,
-        array_agg(distinct question_user_id) as askers,
-        array_agg(distinct answer_user_id) as answerers
-    from tag_users
-    group by tag_id
-),
 tag_answer_counts as (
     select
         et.tag_id,
@@ -89,16 +81,12 @@ select
     avg(case when a.is_accepted = 1 then a.score end) as avg_accepted_answer_quality,
     avg(case when a.is_accepted = 0 then a.score end) as avg_non_accepted_answer_quality,
     avg(att.hours_to_accept) as avg_hours_to_accepted_answer,
-    cardinality(array_union(au.askers, au.answerers)) as total_users_interacting,
-    safe_divide(cardinality(array_except(au.answerers, au.askers)), cardinality(array_union(au.askers, au.answerers))) as ratio_only_answering,
-    safe_divide(cardinality(array_except(au.askers, au.answerers)), cardinality(array_union(au.askers, au.answerers))) as ratio_only_asking,
     safe_divide(tac.total_answers, tv.total_views) as answer_to_view_ratio
 from exploded_tags et
 left join {{ ref('tags') }} tg on tg.tag_id = et.tag_id
 left join {{ ref('questions') }} q on q.question_id = et.question_id
 left join answer_scores a on a.question_id = et.question_id
 left join accepted_answer_times att on att.question_id = et.question_id
-left join aggregated_users au on au.tag_id = et.tag_id
 left join tag_answer_counts tac on tac.tag_id = et.tag_id
 left join tag_views tv on tv.tag_id = et.tag_id
 group by 1,2, tv.total_questions, tac.total_answers, tv.total_views

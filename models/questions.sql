@@ -9,7 +9,7 @@ with raw as (
         view_count,
         owner_user_id,
         creation_date,
-        split(tags, ',') as tag_list
+        split(tags, '|') as tag_list
     from {{ source('stackoverflow_public', 'posts_questions') }}
 )
 
