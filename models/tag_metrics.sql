@@ -1,92 +1,48 @@
 {{ config(materialized='table') }}
 
-with exploded_tags as (
+with base as (
     select
         q.question_id,
-        tag_id
-    from {{ ref('questions') }} q,
-    unnest(q.tag_ids) tag_id
-),
-answer_scores as (
-    select
-        a.question_id,
-        a.answer_id,
-        a.owner_user_id,
-        a.score,
-        a.creation_date,
-        case when a.answer_id = q.accepted_answer_id then 1 else 0 end as is_accepted
-    from {{ ref('answers') }} a
-    left join {{ ref('questions') }} q 
-        on a.question_id = q.question_id
-),
-accepted_answer_times as (
-    select
-        q.question_id,
-        timestamp_diff(a.creation_date, q.creation_date, HOUR) as hours_to_accept
-    from {{ ref('questions') }} q
-    join {{ ref('answers') }} a
-        on a.answer_id = q.accepted_answer_id
-),
-tag_users as (
-    select
-        et.tag_id,
         q.owner_user_id as question_user_id,
-        a.owner_user_id as answer_user_id
-    from exploded_tags et
-    left join {{ ref('questions') }} q on q.question_id = et.question_id
-    left join {{ ref('answers') }} a on a.question_id = et.question_id
-),
-tag_answer_counts as (
-    select
+        q.accepted_answer_id,
+        q.creation_date as question_creation,
+        q.view_count,
         et.tag_id,
-        count(a.answer_id) as total_answers
-    from exploded_tags et
-    left join answer_scores a on a.question_id = et.question_id
-    group by et.tag_id
+        a.answer_id,
+        a.owner_user_id as answer_user_id,
+        a.score as answer_score,
+        a.creation_date as answer_creation,
+        case when a.answer_id = q.accepted_answer_id then 1 else 0 end as is_accepted
+    from {{ ref('questions') }} q
+    cross join unnest(q.tag_ids) as et(tag_id)
+    left join {{ ref('answers') }} a on a.question_id = q.question_id
 ),
-tag_views as (
-    select
-        et.tag_id,
-        sum(q.view_count) as total_views,
-        count(distinct et.question_id) as total_questions
-    from exploded_tags et
-    left join {{ ref('questions') }} q on q.question_id = et.question_id
-    group by et.tag_id
-),
-top_user_contributions as (
-    select
-        et.tag_id,
-        a.owner_user_id,
-        count(*) as answers_per_user
-    from exploded_tags et
-    join answer_scores a on a.question_id = et.question_id
-    group by 1,2
-),
-top_percent_contrib as (
+
+tag_metrics as (
     select
         tag_id,
-        percentile_cont(answers_per_user, 0.9) over(partition by tag_id) as top10_cutoff,
-        percentile_cont(answers_per_user, 0.75) over(partition by tag_id) as top25_cutoff,
-        percentile_cont(answers_per_user, 0.5) over(partition by tag_id) as top50_cutoff
-    from top_user_contributions
+        count(distinct question_id) as total_questions,
+        sum(case when accepted_answer_id is not null then 1 else 0 end) as answered_questions,
+        avg(answer_score) as avg_answer_quality,
+        avg(case when is_accepted = 1 then answer_score end) as avg_accepted_answer_quality,
+        avg(case when is_accepted = 0 then answer_score end) as avg_non_accepted_answer_quality,
+        avg(case when is_accepted = 1 then timestamp_diff(answer_creation, question_creation, HOUR) end) as avg_hours_to_accepted_answer,
+        count(answer_id) as total_answers,
+        sum(view_count) as total_views
+    from base
+    group by tag_id
 )
 
 select
-    et.tag_id,
+    tm.tag_id,
     tg.tag_name,
-    tv.total_questions,
-    count(distinct case when q.accepted_answer_id is not null then et.question_id end) as answered_questions,
-    safe_divide(count(distinct case when q.accepted_answer_id is not null then et.question_id end), tv.total_questions) as answer_ratio,
-    avg(a.score) as avg_answer_quality,
-    avg(case when a.is_accepted = 1 then a.score end) as avg_accepted_answer_quality,
-    avg(case when a.is_accepted = 0 then a.score end) as avg_non_accepted_answer_quality,
-    avg(att.hours_to_accept) as avg_hours_to_accepted_answer,
-    safe_divide(tac.total_answers, tv.total_views) as answer_to_view_ratio
-from exploded_tags et
-left join {{ ref('tags') }} tg on tg.tag_id = et.tag_id
-left join {{ ref('questions') }} q on q.question_id = et.question_id
-left join answer_scores a on a.question_id = et.question_id
-left join accepted_answer_times att on att.question_id = et.question_id
-left join tag_answer_counts tac on tac.tag_id = et.tag_id
-left join tag_views tv on tv.tag_id = et.tag_id
-group by 1,2, tv.total_questions, tac.total_answers, tv.total_views
+    tm.total_questions,
+    tm.answered_questions,
+    safe_divide(tm.answered_questions, tm.total_questions) as answer_ratio,
+    tm.avg_answer_quality,
+    tm.avg_accepted_answer_quality,
+    tm.avg_non_accepted_answer_quality,
+    tm.avg_hours_to_accepted_answer,
+    safe_divide(tm.total_answers, tm.total_views) as answer_to_view_ratio
+from tag_metrics tm
+left join {{ ref('tags') }} tg on tg.tag_id = tm.tag_id;

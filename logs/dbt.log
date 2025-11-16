@@ -732,3 +732,16 @@ Database Error
 [0m23:59:46.295774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001500BD0AA50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150294BFEE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015029568050>]}
 [0m23:59:46.296201 [debug] [MainThread]: Flushing usage events
 [0m23:59:46.867521 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:14:40.532086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021450CACD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021451735A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021451DABD90>]}
+
+
+============================== 00:14:40.541073 | 5582c1e8-6574-452e-b667-6001f5234a27 ==============================
+[0m00:14:40.541073 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m00:14:40.541983 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'profiles_dir': 'D:\\InsightaAssessment', 'target_path': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'D:\\InsightaAssessment\\logs', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'invocation_command': 'dbt test', 'printer_width': '80', 'write_json': 'True'}
+[0m00:14:40.548346 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'BIGQUERY_PROJECT'
+[0m00:14:40.549451 [debug] [MainThread]: Command `dbt test` failed at 00:14:40.549274 after 0.28 seconds
+[0m00:14:40.549981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021451DEAC40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021451E06450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021451C3B9B0>]}
+[0m00:14:40.550444 [debug] [MainThread]: Flushing usage events
+[0m00:14:41.176813 [debug] [MainThread]: An error was encountered while trying to flush usage events
