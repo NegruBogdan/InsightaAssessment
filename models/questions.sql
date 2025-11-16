@@ -27,4 +27,5 @@ left join unnest(r.tag_list) as tag_name
 left join {{ ref('tags') }} t
     on trim(tag_name) = trim(t.tag_name)
 where t.tag_id is not null
+and r.question_id is not null
 group by 1,2,3,4,5,6,7
