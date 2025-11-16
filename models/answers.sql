@@ -19,7 +19,7 @@ valid_answers as (
     select r.*
     from raw r
     join {{ ref('questions') }} q
-      on r.parent_id = q.question_id
+      on r.question_id = q.question_id
 )
 
 select *
