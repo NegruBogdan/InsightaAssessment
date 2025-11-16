@@ -45,4 +45,4 @@ select
     tm.avg_hours_to_accepted_answer,
     safe_divide(tm.total_answers, tm.total_views) as answer_to_view_ratio
 from tag_metrics tm
-left join {{ ref('tags') }} tg on tg.tag_id = tm.tag_id;
+left join {{ ref('tags') }} tg on tg.tag_id = tm.tag_id
