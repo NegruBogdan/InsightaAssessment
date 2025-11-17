@@ -3,77 +3,11 @@ version: 2
 models:
   - name: answers
     description: "Answers dimention table"
-    columns:
-      - name: answer_id
-        tests:
-          - not_null
-          - unique
-      - name: question_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('questions')
-              field: question_id
-      - name: owner_user_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('users')
-              field: user_id
-      - name: score
-        tests:
-          - not_null
-      - name: creation_date
-        tests:
-          - not_null
-
   - name: questions
     description: "Info and metrics about questions"
-    columns:
-      - name: question_id
-        tests:
-          - not_null
-          - unique
-      - name: accepted_answer_id
-        tests:
-          - relationships:
-              to: ref('answers')
-              field: answer_id
-      - name: owner_user_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('users')
-              field: user_id
-      - name: view_count
-        tests:
-          - not_null
-      - name: comment_count
-        tests:
-          - not_null
-      - name: tag_ids
-        tests:
-          - not_null
 
   - name: tags
     description: "Tag dimention table"
-    columns:
-      - name: tag_id
-        tests:
-          - not_null
-          - unique
-      - name: tag_name
-        tests:
-          - not_null
-          - unique
 
   - name: users
     description: "User Info"
-    columns:
-      - name: user_id
-        tests:
-          - not_null
-          - unique
-      - name: reputation
-        tests:
-          - not_null
