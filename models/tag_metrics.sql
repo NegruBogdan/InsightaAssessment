@@ -7,14 +7,14 @@ with base as (
         q.accepted_answer_id,
         q.creation_date as question_creation,
         q.view_count,
-        et.tag_id,
+        tag_id,
         a.answer_id,
         a.owner_user_id as answer_user_id,
         a.score as answer_score,
         a.creation_date as answer_creation,
         case when a.answer_id = q.accepted_answer_id then 1 else 0 end as is_accepted
     from {{ ref('questions') }} q
-    cross join unnest(q.tag_ids) as et(tag_id)
+    CROSS JOIN UNNEST(q.tag_ids) AS tag_id
     left join {{ ref('answers') }} a on a.question_id = q.question_id
 ),
 
@@ -45,4 +45,4 @@ select
     tm.avg_hours_to_accepted_answer,
     safe_divide(tm.total_answers, tm.total_views) as answer_to_view_ratio
 from tag_metrics tm
-left join {{ ref('tags') }} tg on tg.tag_id = tm.tag_id;
+left join {{ ref('tags') }} tg on tg.tag_id = tm.tag_id
